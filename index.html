@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script src="slick/slick.js" type="text/javascript" charset="utf-8"></script>
+    <style>
+
+    </style>
+
+    <style>
+        .slider {
+            width: 58%;
+            margin: 84px 0px 0px;
+        }
+
+        .slick-slide {
+            margin: 0px 20px;
+        }
+
+        .slick-slide img {
+            width: 100%;
+        }
+
+        .slick-slide {
+            transition: all ease-in-out .3s;
+            opacity: .2;
+        }
+
+        .slick-active {
+            opacity: .5;
+        }
+
+        .slick-current {
+            opacity: 1;
+        }
+
+        @font-face {
+            font-family: "Myriad Pro Light";
+            src: url("font/myriadpro-light.otf");
+        }
+
+        @font-face {
+            font-family: "Myriad Pro Regular";
+            src: url("font/myriadpro-regular.otf");
+        }
+
+        @font-face {
+            font-family: "Myriad Pro Bold";
+            src: url("font/myriadpro-bold.otf");
+        }
+
+        body,
+        *,
+        ul {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        header nav {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        header nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+
+        header nav ul li {
+            list-style: none;
+        }
+
+        header nav ul li a {
+            display: block;
+            margin: 30px 15px;
+            color: #000;
+            text-decoration: none;
+            font: 15px Helvetica;
+        }
+
+        .header-nav-button-buy {
+            background: #33cc33;
+            color: #fff;
+            font: 18px Helvetica;
+            border-radius: 5px;
+            width: 200px;
+            padding: 10px 0px;
+            cursor: pointer;
+            border: none
+        }
+
+        .section-article-collage-img {
+            background: url(img/collage.jpg) no-repeat;
+            height: 1161px;
+            background-size: cover;
+            position: relative;
+        }
+
+        .section-article-collage-blocks {
+            background: #0033cc;
+            width: 401px;
+            height: 401px;
+            position: absolute;
+            bottom: 100px;
+            left: 101px;
+        }
+
+        .section-article-collage-text1 {
+            font: 700 60px Helvetica;
+            color: #FFF;
+            text-transform: uppercase;
+            padding: 70px 40px 0px;
+        }
+
+        .section-article-collage-text2 {
+            color: #FFF;
+            font: 30px Myriad Pro Light;
+            padding: 48px 40px;
+        }
+
+        .section-article-next-step {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section-article-next-step {
+            font: 40px Myriad Pro Light;
+            margin: 60px 0px 53px;
+        }
+
+        .section-article-next-step-info {
+            font: 20px Myriad Pro Light;
+            width: 610px;
+        }
+
+        h2.article-key-h2 {
+            display: table;
+            white-space: nowrap;
+            font: 700 30px Helvetica;
+            text-align: center;
+            margin: 109px 0px 0px;
+        }
+
+        h2.article-key-h2:before,
+        h2.article-key-h2:after {
+            border-top: 1px solid #CCC;
+            content: '';
+            display: table-cell;
+            position: relative;
+            top: 0.5em;
+            width: 38.2%;
+        }
+
+        h2.article-key-h2:before {
+            right: 1.5%;
+        }
+
+        h2.article-key-h2:after {
+            left: 1.5%;
+        }
+
+        h2.compare-options-h2 {
+            display: table;
+            white-space: nowrap;
+            font: 700 25px Myriad Pro Light;
+            text-align: center;
+            margin: 109px 0px 0px;
+            color: #3399cc;
+            position: relative;
+        }
+
+        h2.compare-options-h2:before,
+        h2.compare-options-h2:after {
+            border-top: 1px solid #CCC;
+            content: '';
+            display: table-cell;
+            position: relative;
+            top: 1em;
+            width: 48.15%;
+        }
+
+        h2.compare-options-h2:before {
+            right: 1.5%;
+        }
+
+        h2.compare-options-h2:after {
+            left: 1.5%;
+        }
+
+        .compare-options-h2-text {
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+
+
+
+
+        .article-key-blocks {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            text-align: center;
+            flex-wrap: wrap;
+        }
+
+        .article-key-blocks-order,
+        .article-key-blocks-controll,
+        .article-key-blocks-product {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 338px;
+            margin: 81px 34px 0px;
+        }
+
+        .article-key-blocks-order-img {
+            background: url(img/order.png) no-repeat;
+            width: 102px;
+            height: 100px;
+        }
+
+        .article-key-blocks-controll-img {
+            background: url(img/controll.png) no-repeat;
+            width: 131px;
+            height: 100px;
+        }
+
+        .article-key-blocks-product-img {
+            background: url(img/product.png) no-repeat;
+            width: 99px;
+            height: 99px;
+        }
+
+        .article-key-blocks-order-title,
+        .article-key-blocks-controll-title,
+        .article-key-blocks-product-title {
+            font: 700 15px Helvetica;
+            margin: 58px 0px 0px;
+        }
+
+        .article-key-blocks-order-text,
+        .article-key-blocks-controll-text,
+        .article-key-blocks-product-text {
+            font: 16px Myriad Pro Light;
+            margin: 22px 0px 0px;
+        }
+
+        article.article-express-diag {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .article-express-diag-item {
+            background: #CCFFCC;
+            width: 1200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 113px 0px 0px;
+        }
+
+        .article-express-diag-item-text {
+            font: 18px Myriad Pro Light;
+            width: 600px;
+            text-align: center;
+            margin: 55px 0px 0px;
+        }
+
+        button.article-express-diag-item-button {
+            background: #66CC33;
+            color: #FFF;
+            padding: 10px 20px;
+            font: 700 15px Myriad Pro Light;
+            border-radius: 3px;
+            border: none;
+            margin: 47px 0px 50px;
+        }
+
+        article.article-capability,
+        article.article-trust,
+        article.article-delopt,
+        .article-additional-modules,
+        .article-teaching {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .article-additional-modules-title {
+            margin: 100px 0px 0px;
+        }
+
+        .article-capability-title,
+        .article-trust-title,
+        .article-delopt-title,
+        .article-additional-modules-title,
+        .article-teaching-title,
+        .article-to-try-title {
+            font: 30px Myriad Pro Light;
+            text-align: center;
+        }
+
+        .article-trust-title {
+            font: 30px Myriad Pro Light;
+            margin: 93px 0px 0px;
+            text-align: center;
+        }
+
+        .article-capability-title {
+            margin: 93px 0px 0px;
+        }
+
+        .article-capability-blocks {
+            margin: 70px 0px 0px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 1200px;
+        }
+
+        .article-capability-blocks-text {
+            font: 18px Myriad Pro Light;
+            width: 530px;
+            padding: 69px 120px 69px 0px;
+        }
+
+        .article-capability-blocks-items {
+            width: 380px;
+        }
+
+        .article-capability-blocks-items-text {
+            font: 14px Helvetica;
+            padding: 20px 0px 55px;
+        }
+
+        .article-trust-slider-block-1,
+        .article-trust-slider-block-2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .article-trust-slider-block-1-photo {
+            background: url(img/girl-com-1.png);
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background-size: cover;
+        }
+
+        .article-trust-slider-block-2-photo {
+            background: url(img/girl-com-1.png);
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background-size: cover;
+        }
+
+        .article-trust-slider-block-1-name,
+        .article-trust-slider-block-2-name {
+            margin: 21px 0px 5px;
+            font: 700 18px Myriad Pro Light;
+        }
+
+        .article-trust-slider-block-1-post,
+        .article-trust-slider-block-2-post {
+            font: 700 14px Myriad Pro Light;
+        }
+
+        .article-trust-slider-block-1-company {
+            background: url(img/company-logo.png);
+            width: 85px;
+            height: 77px;
+            margin: 18px 0px 29px;
+        }
+
+        .article-trust-slider-block-2-company {
+            background: url(img/company-logo.png);
+            width: 85px;
+            height: 77px;
+            margin: 18px 0px 29px;
+        }
+
+        .article-trust-slider-block-1-text,
+        .article-trust-slider-block-2-text {
+            font: 16px Myriad Pro Light;
+            text-align: center;
+            width: 705px;
+            color: #666;
+        }
+
+        .article-delopt-title {
+            margin: 181px 0px 0px;
+        }
+
+        .article-delopt-text {
+            margin: 54px 0px;
+            font: 16px Myriad Pro Light;
+            text-align: center;
+        }
+
+        .article-delopt-slider {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .article-delopt-slider-item-b {
+            border: 1px solid #669933 !important;
+            font-weight: 700 !important;
+            position: relative;
+            font: 14px Helvetica !important;
+            color: #669933;
+        }
+
+        .article-delopt-slider-item-b:before {
+            content: '';
+            background: url(img/slider-bottom-arrow.png) no-repeat 0% 0%;
+            width: 12px;
+            height: 10px;
+            position: absolute;
+            bottom: -11px;
+            left: 65px;
+        }
+
+        .article-delopt-slider-item:hover {
+            color: #669933;
+        }
+
+        .article-delopt-slider-item {
+            border-radius: 3px;
+            padding: 17px 20px;
+            border-top: 1px solid #CCC;
+            border-bottom: 1px solid #CCC;
+            border-right: 1px solid #CCC;
+            font: 14px Myriad Pro Light;
+            cursor: pointer;
+        }
+
+        .article-delopt-blocks-b-g {
+            display: flex;
+            flex-direction: row;
+            width: 1200px;
+            justify-content: space-between;
+            margin: 44px 0px 0px;
+        }
+
+        .article-delopt-blocks-b-buy {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .article-delopt-blocks-b-buy-title {
+            font: 30px Myriad Pro Light;
+        }
+
+        .article-delopt-blocks-b-buy-title span {
+            font: 30px Myriad Pro Light;
+            color: #3399cc;
+            display: flex;
+        }
+
+        .article-delopt-blocks-b-buy-button {
+            margin: 0px 0px 0px 95px !important;
+        }
+
+        .article-delopt-blocks-b-reccomend {
+            border: 3px solid #3399cc;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 31px 29px;
+        }
+
+        .article-delopt-blocks-b-reccomend,
+        .article-delopt-blocks-g-reccomend {
+            margin: 32px 0px 0px;
+        }
+
+        .article-delopt-blocks-b-reccomend-text {
+            font: 30px Myriad Pro Light;
+            width: 350px;
+            display: flex;
+            text-align: start;
+        }
+
+        .article-delopt-blocks-b-reccomend-after-before {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            margin: 20px 0px 0px;
+        }
+
+
+
+        .article-delopt-blocks-b-reccomend-after-before-block {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            margin: 0px 25px;
+            font: 16px Myriad Pro Light;
+        }
+
+        .article-delopt-blocks-b-reccomend-after-before-block span {
+            font: 30px Myriad Pro Light;
+            color: #3399cc;
+        }
+
+        .article-delopt-blocks-b-reccomend-after,
+        .article-delopt-blocks-b-reccomend-before {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .article-delopt-blocks-b {
+            width: 500px;
+        }
+
+        .article-delopt-blocks-b-g-advantages-head {
+            font: 16px Myriad Pro Light;
+            margin: 38px 0px 58px;
+        }
+
+        .article-delopt-blocks-b-g-advantages-text {
+            font: 14px Myriad Pro Light;
+        }
+
+        .article-delopt-blocks-g {
+            width: 500px;
+        }
+
+        .article-delopt-blocks-g-buy {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .article-delopt-blocks-g-buy-title {
+            font: 30px Myriad Pro Light;
+        }
+
+        .article-delopt-blocks-g-buy-title span {
+            font: 30px Myriad Pro Light;
+            color: #33cc66;
+            display: flex;
+        }
+
+        .article-delopt-blocks-g-buy-button {
+            margin: 0px 0px 0px 95px !important;
+        }
+
+        .article-delopt-blocks-g-reccomend {
+            border: 3px solid #33cc66;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 31px 29px;
+        }
+
+        .article-delopt-blocks-g-reccomend-text {
+            font: 30px Myriad Pro Light;
+            width: 350px;
+            display: flex;
+            text-align: start;
+        }
+
+        .article-delopt-blocks-g-reccomend-after-before {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            margin: 82px 0px 0px;
+        }
+
+
+
+        .article-delopt-blocks-g-reccomend-after-before-block {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            margin: 0px 25px;
+            font: 16px Myriad Pro Light;
+        }
+
+        .article-delopt-blocks-g-reccomend-after-before-block span {
+            font: 30px Myriad Pro Light;
+            color: #33cc66;
+        }
+
+        .article-delopt-blocks-g-reccomend-after,
+        .article-delopt-blocks-g-reccomend-before {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .article-additional-modules-blocks {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 70px 0px 89px;
+        }
+
+        .article-additional-modules-blocks-items {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 205px;
+            margin: 0px 29px;
+        }
+
+        .article-additional-modules-blocks-items-title {
+            font: 16px Myriad Pro bold;
+            margin: 28px 0px 25px;
+            text-align: center;
+            width: 140px;
+        }
+
+        .article-additional-modules-blocks-items-text {
+            font: 15px Myriad Pro Light;
+            text-align: center;
+            height: 126px;
+
+        }
+
+        a.article-additional-modules-blocks-items-a {
+            font: 15px Myriad Pro Light;
+            color: #3399cc;
+            text-decoration: none;
+            margin: 21px 0px 0px;
+        }
+
+        .article-teaching {
+            background: url(img/flower.png) no-repeat 0% 100%, url(img/light.png) no-repeat 100% 100% #CCC;
+        }
+
+        .article-teaching-title {
+            margin: 52px 0px 71px;
+        }
+
+        .article-teaching-block {
+            width: 700px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .article-teaching-block-text-h1 {
+            font: 16px Myriad Pro Light;
+        }
+
+        .article-teaching-block-text {
+            font: 14px Myriad Pro Light;
+        }
+
+        .article-teaching-block-button {
+            margin: 106px 0px 102px !important;
+        }
+
+        .article-to-try-title {
+            margin: 61px 0px;
+        }
+
+        .article-to-try-blocks {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+
+        .article-to-try-blocks-items {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .article-to-try-blocks-text {
+            font: 16px Myriad Pro Light;
+            width: 478px;
+            margin: 32px 0px 44px;
+        }
+
+        a.article-to-try-blocks-a {
+            font: 16px Myriad Pro Regular;
+            text-decoration: none;
+            color: #0033cc;
+        }
+
+        button.buy-business-studio {
+            background: #66CC33;
+            color: #FFF;
+            padding: 25px 0px;
+            font: 700 17px Myriad Pro Light;
+            border-radius: 3px;
+            border: none;
+            margin: 47px 0px 50px;
+            width: 100%;
+        }
+
+        article.article-copyright {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .article-copyright-title {
+            font: 16px Myriad Pro Light;
+            color: #999;
+            text-align: center;
+        }
+
+        .article-copyright-block {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin: 59px 0px 0px;
+        }
+
+        .article-copyright-call,
+        .article-copyright-write {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0px 178px;
+        }
+
+        .article-copyright-call-text,
+        .article-copyright-write-text {
+            font: 14px Myriad Pro Regular;
+            color: #999;
+        }
+
+        .article-copyright-call-number {
+            font: 700 18px Myriad Pro Regular;
+        }
+
+        a.article-copyright-write-mail {
+            font: 700 18px Myriad Pro Regular;
+            text-decoration: none;
+            color: #3399cc;
+        }
+
+        .article-copyright-copyr {
+            text-align: center;
+            font: 16px Myriad Pro Light;
+            color: #999;
+            margin: 90px 0px 32px;
+        }
+
+
+
+        @media screen and (max-width: 1250px) {
+
+            .section-article-next-step {
+                margin: 60px 10px 53px;
+            }
+
+            .section-article-next-step-info {
+                width: auto;
+                padding: 0px 30px;
+            }
+
+            .article-express-diag-item {
+                width: 100%;
+            }
+
+            .article-express-diag-item-text {
+                width: auto;
+                padding: 0px 30px
+            }
+
+            .article-capability-blocks {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .article-capability-blocks-text {
+                padding: 69px;
+            }
+
+            .article-capability-blocks-items {
+                width: 380px;
+                margin: 0px 20px;
+            }
+
+            .article-trust-slider-block-1-text,
+            .article-trust-slider-block-2-text {
+                width: auto;
+                font: 14px Myriad Pro Light;
+            }
+
+            .article-delopt-slider {
+                flex-direction: column;
+            }
+
+            .article-delopt-slider-item {
+                border: 1px solid #CCC;
+                margin: 0px 0px 20px;
+                text-align: center;
+            }
+
+            .article-delopt-slider-item-b:before {
+                left: 45%;
+            }
+
+            .article-delopt-blocks-b-g {
+                display: flex;
+                width: 70%;
+                flex-direction: column;
+            }
+
+            .article-delopt-blocks-b,
+            .article-delopt-blocks-g {
+                width: 100%;
+            }
+
+            .article-delopt-blocks-g {
+                margin: 50px 0px 0px;
+            }
+
+            .article-delopt-blocks-b-buy,
+            .article-delopt-blocks-g-buy {
+                padding: 0px 30px;
+            }
+
+            .article-delopt-blocks-b-g-advantages-blocks {
+                padding: 0px 30px;
+            }
+
+            .article-additional-modules-blocks-items {
+                margin: 0px 29px 30px;
+            }
+
+            .article-additional-modules-blocks-items-text {
+                height: 100%;
+            }
+
+            .article-teaching {
+                background: #CCC;
+            }
+
+            .article-teaching-block {
+                width: 100%;
+            }
+
+            .article-teaching-block-text-h1,
+            .article-teaching-block-text {
+                padding: 0px 30px;
+            }
+
+            .article-to-try-blocks {
+                flex-wrap: wrap;
+            }
+
+            .article-to-try-blocks-text {
+                width: auto;
+                margin: 30px;
+            }
+
+            .article-to-try-blocks-items-add {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .article-to-try-title {
+                margin: 61px 0px 30px;
+            }
+
+            .article-to-try-blocks-items {
+                margin: 30px 0px 0px;
+            }
+
+            .article-copyright-block {
+                justify-content: center;
+            }
+
+            .article-copyright-copyr {
+                margin: 90px 30px 32px;
+            }
+
+        }
+
+        @media screen and (max-width: 1000px) {
+            header nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            header nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .header-nav-button-buy {
+                margin: 0px 0px 20px;
+            }
+
+
+
+        }
+
+        @media screen and (max-width: 630px) {
+
+            .section-article-collage-img {
+                background: none;
+                height: 401px;
+            }
+
+            .section-article-collage-blocks {
+                width: auto;
+                left: 0;
+                bottom: 0px
+            }
+
+        }
+
+        @media screen and (min-device-width: 375px) and (max-device-width: 667px) {
+            header nav {
+                flex-direction: column;
+            }
+
+            header nav ul {
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .header-nav-button-buy {
+                margin: 0px 0px 50px;
+            }
+
+            .section-article-collage-img {
+                height: 401px;
+            }
+
+            .section-article-next-step {
+                margin: 30px 0px;
+            }
+
+            .section-article-next-step-info {
+                width: auto;
+                padding: 0px 30px;
+                text-align: justify;
+            }
+
+            h2.article-key-h2 {
+                display: block;
+                white-space: normal;
+                text-align: center;
+                margin: 50px 30px;
+            }
+
+            .article-key-blocks {
+                flex-wrap: wrap;
+            }
+
+            .article-capability-blocks {
+                width: 100%;
+            }
+
+            .article-capability-blocks-text {
+                font: 18px Myriad Pro Light;
+                width: 100%;
+                padding: 0px 30px 30px;
+            }
+
+            .article-capability-blocks-items-text {
+                text-align: center;
+                padding: 20px;
+            }
+
+            .article-capability-blocks-items img {
+                width: 375px;
+            }
+
+            .article-trust-slider-block-1-text,
+            .article-trust-slider-block-2-text {
+                width: 100%;
+            }
+
+            .article-delopt-title {
+                margin: 60px 0px 0px;
+            }
+
+            .article-delopt-text {
+                margin: 54px 30px;
+            }
+
+            .article-delopt-slider {
+                flex-direction: column;
+            }
+
+            .article-delopt-slider-item {
+                border: 1px solid #CCC;
+                margin: 0px 0px 20px;
+                text-align: center;
+            }
+
+            .article-delopt-slider-item-b:before {
+                left: 45%;
+            }
+
+            .article-delopt-blocks-b-g {
+                display: flex;
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .article-delopt-blocks-b,
+            .article-delopt-blocks-g {
+                width: 100%;
+            }
+
+            .article-delopt-blocks-g {
+                margin: 50px 0px 0px;
+            }
+
+            .article-delopt-blocks-b-buy,
+            .article-delopt-blocks-g-buy {
+                padding: 0px 30px;
+            }
+
+            .article-delopt-blocks-b-g-advantages-blocks {
+                padding: 0px 30px;
+            }
+
+            .article-additional-modules-blocks-items {
+                margin: 0px 29px 30px;
+            }
+
+            .article-additional-modules-blocks-items-text {
+                height: 100%;
+            }
+
+            .article-teaching {
+                background: #CCC;
+            }
+
+            .article-teaching-block {
+                width: 100%;
+            }
+
+            .article-teaching-block-text-h1,
+            .article-teaching-block-text {
+                padding: 0px 30px;
+            }
+
+            .article-to-try-blocks {
+                flex-wrap: wrap;
+            }
+
+            .article-to-try-blocks-text {
+                width: auto;
+                margin: 30px;
+            }
+
+            .article-to-try-title {
+                margin: 61px 0px 0px;
+            }
+
+            .article-to-try-blocks-items-add {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .article-to-try-blocks-items {
+                margin: 50px 0px 0px;
+            }
+
+            .article-copyright-block {
+                flex-direction: column;
+            }
+
+            .article-copyright-call,
+            .article-copyright-write {
+                flex-direction: column;
+                margin: 10px 0px;
+            }
+
+            .article-copyright-copyr {
+                margin: 30px;
+            }
+
+            .section-article-collage-blocks {
+                width: 100%;
+                position: static;
+            }
+
+            .article-express-diag-item {
+                width: auto;
+            }
+
+            .article-express-diag-item-text {
+                width: auto;
+                text-align: center;
+                margin: 0px;
+                padding: 55px 55px 0px;
+            }
+
+            h2.compare-options-h2:after {
+                left: 0%;
+            }
+
+            .article-delopt-blocks-b-reccomend-text,
+            .article-delopt-blocks-g-reccomend-text {
+                width: auto;
+                font: 25px Myriad Pro Light;
+            }
+
+            .article-delopt-blocks-b-reccomend,
+            .article-delopt-blocks-g-reccomend {
+                margin: 32px 30px 0px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="img/logo.png">
+            <ul>
+                <li><a href="#menu-1">О продукте</a></li>
+                <li><a href="#menu-2">Возможности</a></li>
+                <li><a href="#menu-3">Уже используют</a></li>
+                <li><a href="#menu-4">Поставки</a></li>
+                <li><a href="#menu-5">Обучение</a></li>
+                <li><a href="#menu-6">Попробовать</a></li>
+            </ul>
+            <button class="header-nav-button-buy">Купить</button>
+        </nav>
+    </header>
+    <section class="section-collage">
+        <article>
+            <div class="section-article-collage-img">
+                <div class="section-article-collage-blocks">
+                    <div class="section-article-collage-text1">business studio</div>
+                    <div class="section-article-collage-text2">система <br>бизнес-моделирования</div>
+                </div>
+            </div>
+        </article>
+    </section>
+    <section>
+        <article class="section-article-next-step">
+            <div class="section-article-next-step">Следующая ступень развития<br> Вашего бизнеса</div>
+            <div class="section-article-next-step-info">Business Studio позволяет упорядочить вашу компанию и перевести
+                ее на новый уровень развития. Уровень точной, скурпулёзно настроенной и отлаженной системы. Системы
+                хорошо упорядоченной и способоной работать самостоятельно, без участия руководителя.</div>
+        </article>
+        <article id="menu-1" class="article-key">
+            <h2 class="article-key-h2">Ключевые признаки системы <br>компании</h2>
+            <div class="article-key-blocks">
+                <div class="article-key-blocks-order">
+                    <div class="article-key-blocks-order-img"></div>
+                    <div class="article-key-blocks-order-title">Упорядоченность</div>
+                    <div class="article-key-blocks-order-text">Каждый сотрудник компании точно знает какие у его
+                        компании цели, за что конкретно в компании он отвечает и как именно будут оцениваться результаты
+                        его работы.</div>
+                </div>
+                <div class="article-key-blocks-controll">
+                    <div class="article-key-blocks-controll-img"></div>
+                    <div class="article-key-blocks-controll-title">Управляемость</div>
+                    <div class="article-key-blocks-controll-text">Руководители и сотрудники компании могут видеть
+                        реальную картину происходящего в компании в настоящее время и влияют на нее в режиме реального
+                        времени. Компания предсказуемо реагирует на управляющие сигналы и разворачивается в нужном
+                        направлении.</div>
+                </div>
+                <div class="article-key-blocks-product">
+                    <div class="article-key-blocks-product-img"></div>
+                    <div class="article-key-blocks-product-title">Продуктивность</div>
+                    <div class="article-key-blocks-product-text">В компании нет функций, которые не добавляют никакой
+                        ценности, часто выполняются со сбоями или дублируются. Процессы компании организованы оптимально
+                        и непрерывно совершенствуются.</div>
+                </div>
+            </div>
+        </article>
+        <article class="article-express-diag">
+            <div class="article-express-diag-item">
+                <div class="article-express-diag-item-text">
+                    Проверить, насколько эффективно организована система управления в вашей компании сейчас и решить
+                    может ли быть вам полезна система организационного проектирования «Business Studio» можно с помощью
+                    нашей анкеты экспресс-диагностики.
+                </div>
+                <button class="article-express-diag-item-button">Скачать анкету экспресс-диагностики</button>
+            </div>
+        </article>
+    </section>
+    <section class="capability">
+        <article id="menu-2" class="article-capability">
+            <div class="article-capability-title">Возможности</div>
+            <div class="article-capability-blocks">
+                <div class="article-capability-blocks-text">
+                    В Business Studio есть все, чтобы проработать все составные элементы системы управления организации,
+                    а так же контролировать ее работоспособность и эффективность
+                </div>
+                <div class="article-capability-blocks-items">
+                    <img src="img/cap-img-1.png">
+                    <div class="article-capability-blocks-items-text">Постановка стратегических целей и ключевых
+                        показателей компании</div>
+                </div>
+                <div class="article-capability-blocks-items">
+                    <img src="img/cap-img-2.png">
+                    <div class="article-capability-blocks-items-text">Разработка оптимальной модели бизнес-процессов
+                        компании</div>
+                </div>
+                <div class="article-capability-blocks-items">
+                    <img src="img/cap-img-3.png">
+                    <div class="article-capability-blocks-items-text">Проектирование организационной структуры, уместной
+                        для вашей компании</div>
+                </div>
+                <div class="article-capability-blocks-items">
+                    <img src="img/cap-img-4.png">
+                    <div class="article-capability-blocks-items-text">Оптимизация скорости и стоимости выполнения
+                        бизнес-процессов компании</div>
+                </div>
+                <div class="article-capability-blocks-items">
+                    <img src="img/cap-img-5.png">
+                    <div class="article-capability-blocks-items-text">Стандартизация бизнес-процессов и регламентация
+                        должностных обязанностей сотрудников компании</div>
+                </div>
+                <div class="article-capability-blocks-items">
+                    <img src="img/cap-img-6.png">
+                    <div class="article-capability-blocks-items-text">Возможность контроля, анализа и управления
+                        бизнес-процессами в режиме реального времени</div>
+                </div>
+                <div class="article-capability-blocks-items">
+                    <img src="img/cap-img-7.png">
+                    <div class="article-capability-blocks-items-text">Автоматизация бизнес-процессов и внедрение
+                        информационных систем</div>
+                </div>
+            </div>
+        </article>
+    </section>
+    <section>
+        <article id="menu-3" class="article-trust">
+            <div class="article-trust-title">Компании, которые уже используют <br>Business Studio</div>
+            <section class="lazy slider">
+                <div class="article-trust-slider-block-1">
+                    <div class="article-trust-slider-block-1-photo"></div>
+                    <div class="article-trust-slider-block-1-name">Оксана Борсук</div>
+                    <div class="article-trust-slider-block-1-post">Аналитик бизнес-процессов</div>
+                    <div class="article-trust-slider-block-1-company"></div>
+                    <div class="article-trust-slider-block-1-text">Предпослыкой внедрения программы была необходимость
+                        описания бизнес-модели одного из направлений компании. Основная цель, которую мы для себя
+                        ставили - подробное, пошаговое описание товарного движения. В результате внедрения программы
+                        описан целый ряд важных процессов, в которых наблюдался сбой. Особо отметили удобство программы
+                        в работе при визуализации в доступной форме действующий бизнес-процессов, нахождения «узких
+                        мест» в процессах.</div>
+                </div>
+                <div class="article-trust-slider-block-2">
+                    <div class="article-trust-slider-block-2-photo"></div>
+                    <div class="article-trust-slider-block-2-name">Оксана Борсук</div>
+                    <div class="article-trust-slider-block-2-post">Аналитик бизнес-процессов</div>
+                    <div class="article-trust-slider-block-2-company"></div>
+                    <div class="article-trust-slider-block-2-text">Предпослыкой внедрения программы была необходимость
+                        описания бизнес-модели одного из направлений компании. Основная цель, которую мы для себя
+                        ставили - подробное, пошаговое описание товарного движения. В результате внедрения программы
+                        описан целый ряд важных процессов, в которых наблюдался сбой. Особо отметили удобство программы
+                        в работе при визуализации в доступной форме действующий бизнес-процессов, нахождения «узких
+                        мест» в процессах.</div>
+                </div>
+            </section>
+            <script
+                type="text/javascript">$(document).on('ready', function () { $(".lazy").slick({ lazyLoad: 'ondemand', infinite: true }); });</script>
+        </article>
+    </section>
+    <section>
+        <article id="menu-4" class="article-delopt">
+            <div class="article-delopt-title">Варианты поставки</div>
+            <div class="article-delopt-text">Существует два варианта поставки системы бизнес-моделирования <br>Business
+                Studio 4.0</div>
+            <div class="article-delopt-slider">
+                <div class="article-delopt-slider-item article-delopt-slider-item-b">Общее описание</div>
+                <div class="article-delopt-slider-item">Функционал и стоимость</div>
+                <div class="article-delopt-slider-item">Требования к установке</div>
+                <div class="article-delopt-slider-item">Дополнительные модули</div>
+            </div>
+            <div class="article-delopt-blocks-b-g">
+                <div class="article-delopt-blocks-b">
+                    <div class="article-delopt-blocks-b-buy">
+                        <div class="article-delopt-blocks-b-buy-title">Business Studio <span>Professional</span></div>
+                        <button
+                            class="article-express-diag-item-button article-delopt-blocks-b-buy-button">Купить</button>
+                    </div>
+                    <div class="article-delopt-blocks-b-reccomend">
+                        <div class="article-delopt-blocks-b-reccomend-text">Рекомендуем <br>для малого и среднего
+                            бизнеса</div>
+                        <div class="article-delopt-blocks-b-reccomend-after-before">
+                            <img src="img/slider-rec.png">
+                            <div class="article-delopt-blocks-b-reccomend-after-before-block">
+                                <div class="article-delopt-blocks-b-reccomend-after">от <span>&nbsp;100</span></div>
+                                <div class="article-delopt-blocks-b-reccomend-before">до <span>&nbsp;5000&nbsp;</span>
+                                    сотрудников</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="article-delopt-blocks-b-g-advantages-blocks">
+                        <div class="article-delopt-blocks-b-g-advantages-head">Business Sudio Professional - это базовый
+                            вариант поставки программы, который позволяет решить все основные задачи, стоящие перед
+                            бизнесом на начальном этапе наведения порядка и перехода к системному управлению.</div>
+                        <div class="article-delopt-blocks-b-g-advantages-text">С помощью Business Studio Professional вы
+                            сможете:
+                            <br><br>1. разработать модель бизнес-процессов компании;
+                            <br><br>2. создать документы, регламентирующие правила выполнения бизнес-процессов
+                            сотрудниками (процедуры управления);
+                            <br><br>3. формализовать организационную структуры компании;
+                            <br><br>4. в «один клик» сформировать должностные инструкции, в которых будет четко и
+                            конкретно написано, что именно и как должен делать каждый сотрудник в рамках
+                            бизнес-процессов, в которых он принимает участие;
+                            <br><br>5. разработать систему ключевых показателей эффективности бизнес-процессов и
+                            внедрить автоматческий контроль показателей работы сотрудников;
+                            <br><br>6. формализовать цели компании и стратегию их достижения;
+                            <br><br>7. создать финансовую структуру и регламентировать систему бюджетирования компании.
+                        </div>
+                    </div>
+                </div>
+                <div class="article-delopt-blocks-g">
+                    <div class="article-delopt-blocks-g-buy">
+                        <div class="article-delopt-blocks-g-buy-title">Business Studio <span>Enterprise</span></div>
+                        <button
+                            class="article-express-diag-item-button article-delopt-blocks-g-buy-button">Купить</button>
+                    </div>
+                    <div class="article-delopt-blocks-g-reccomend">
+                        <div class="article-delopt-blocks-g-reccomend-text">Рекомендуем <br>для крупного бизнеса</div>
+                        <div class="article-delopt-blocks-g-reccomend-after-before">
+                            <img src="img/slider-rec-g.png">
+                            <div class="article-delopt-blocks-g-reccomend-after-before-block">
+                                <div class="article-delopt-blocks-g-reccomend-after">Более
+                                    <span>&nbsp;5000&nbsp;</span>сотрудников</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="article-delopt-blocks-b-g-advantages-blocks">
+                        <div class="article-delopt-blocks-b-g-advantages-head">Business Studio Enterprise - это
+                            расширенный вариант поставки программы, который позволит решить, помимо основных задач,
+                            сложные вопросы математической оптимизации бизнес-процессов, внедрения системы управления
+                            качеством и подготовки компании к автоматизации бизнес-процессов.</div>
+                        <div class="article-delopt-blocks-b-g-advantages-text">С помощью Business Studio Professional вы
+                            сможете:
+                            <br><br>1. оптмизировать бизнес-процессы компании используя инструментарий имитационного
+                            моделирования и функционально-стоимостного анализа;
+                            <br><br>2. разработать и внедрить систему правления качеством согласно ISO 9001;
+                            <br><br>3. построить систему контроллинга исполения бизнес-процессов;
+                            <br><br>4. сформулировать тезнические задания на автоматизацию бизнес-процессов;
+                            <br><br>5. интегрировать модели бизнес-процессов с BPM-системой Directum.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+    </section>
+    <h2 class="compare-options-h2">
+        <img src="img/left-right-ar.png">
+        <div class="compare-options-h2-text">Сравнить варианты</div>
+    </h2>
+    <section>
+        <article class="article-additional-modules">
+            <div class="article-additional-modules-title">Обратите внимание на дополнительные <br>модули</div>
+            <div class="article-additional-modules-blocks">
+                <div class="article-additional-modules-blocks-items">
+                    <img src="img/addit-modules-1.png">
+                    <div class="article-additional-modules-blocks-items-title">Business Studio 4.0 Portal</div>
+                    <div class="article-additional-modules-blocks-items-text">Интернет-портал, позволяющий оперативно
+                        обновлять базу знаний компании, содержащую всю необходимую для работы сотрудников
+                        регламентирующую документацию и отчеты.</div>
+                    <a class="article-additional-modules-blocks-items-a" href="#">Подробнее</a>
+                </div>
+                <div class="article-additional-modules-blocks-items">
+                    <img src="img/addit-modules-2.png">
+                    <div class="article-additional-modules-blocks-items-title">Business Studio 4.0 Cockpit</div>
+                    <div class="article-additional-modules-blocks-items-text">Редакция Business Studio с ограниченным
+                        функционалом, предназначена для ввода, просмотра, контроля и анализа информации в Business
+                        Studio.</div>
+                    <a class="article-additional-modules-blocks-items-a" href="#">Подробнее</a>
+                </div>
+                <div class="article-additional-modules-blocks-items">
+                    <img src="img/addit-modules-3.png">
+                    <div class="article-additional-modules-blocks-items-title">MetaEdit</div>
+                    <div class="article-additional-modules-blocks-items-text">Редактор для внесения изменений в
+                        структуры классов баз данных Business Studio.</div>
+                    <a class="article-additional-modules-blocks-items-a" href="#">Подробнее</a>
+                </div>
+                <div class="article-additional-modules-blocks-items">
+                    <img src="img/addit-modules-4.png">
+                    <div class="article-additional-modules-blocks-items-title">Апргейды</div>
+                    <div class="article-additional-modules-blocks-items-text">Редакция Business Studio с ограниченным
+                        функционалом, предназначена для ввода, просмотра, контроля и анализа информации в Business
+                        Studio.</div>
+                    <a class="article-additional-modules-blocks-items-a" href="#">Подробнее</a>
+                </div>
+            </div>
+        </article>
+    </section>
+    <section>
+        <article id="menu-5" class="article-teaching">
+            <div class="article-teaching-title">Обучение</div>
+            <div class="article-teaching-block">
+                <div class="article-teaching-block-text-h1">Большой опыт во внедрении комплексных проектов позволяет нам
+                    форматировать
+                    программу обучения в соответствии с запросом компании-клиента таким образом,
+                    чтобы обучение было эффективным и для начинающих и для опытных
+                    специалистов. В ходе обучения эксперты нашей компании дадут емкий
+                    мастер-класс о настройке и управлении бизнес-процессами вместе с программой
+                    Business Studio (и 0, а так же расскажут о ее базовых и продвинутых возможностях.
+                </div>
+                <div class="article-teaching-block-text"><br>Обучение проводится в корпоративном или индивидуальном
+                    формате на рабочих местах пользователей
+                    программного продукта. Количество людей в группе может быть любым, равным количеству
+                    сотрудников, которые в будущем будут использовать программный продукт в своей работе.
+                    Рекомендуемый объем программы - 2 дня (16 академических часов).
+
+                    После окончания обучения выдается сертификат от компании «Актив-Система». Так же, после
+                    прохождения сертификационного теста, слушатели могут получить статус сертифицированного
+                    специалиста непосредственно от разработчика продукта.<br><br>
+                    Как правило, мы адаптируем типовую программу обучения под конкретный запрос наших клиентов,
+                    поэтому окончательная стоимость обучения определяется после согласования программы и объема
+                    обучения.
+                </div>
+                <button class="article-teaching-block-button article-express-diag-item-button">Отправить заявку</button>
+            </div>
+        </article>
+    </section>
+    <section>
+        <article id="menu-6" class="article-to-try">
+            <div class="article-to-try-title">Попробовать</div>
+            <div class="article-to-try-blocks">
+                <div class="article-to-try-blocks-items">
+                    <img src="img/try-img-1.png">
+                    <div class="article-to-try-blocks-items-add">
+                        <div class="article-to-try-blocks-text">Демо-версия предоставляет протестировать функционал
+                            программы и посмотреть проект модели бизнес-процессов на примере компании «Интехпроект»
+                        </div>
+                        <a class="article-to-try-blocks-a" href="">Получить ссылку на демо-версию</a>
+                    </div>
+                </div>
+                <div class="article-to-try-blocks-items">
+                    <img src="img/try-img-2.png">
+                    <div class="article-to-try-blocks-items-add">
+                        <div class="article-to-try-blocks-text">Полная версия с ограниченным сроком действия позволяет
+                            протестировать на практике весь функционал программы без ограничений. После согласования
+                            заявки нашим консультантом, предосталвяется доступ к лицензии на период 14 календарных дней.
+                        </div>
+                        <a class="article-to-try-blocks-a" href="">Отправить заявку</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+    <button class="buy-business-studio">Купить Business Studio</button>
+    <footer>
+        <article class="article-copyright">
+            <div class="article-copyright-title">Возникли вопросы, касающиеся приобритения <br>Business Studio?</div>
+            <div class="article-copyright-block">
+                <div class="article-copyright-call">
+                    <div class="article-copyright-call-text">Звоните</div>
+                    <div class="article-copyright-call-number">(050) 555-55-55</div>
+                </div>
+                <div class="article-copyright-write">
+                    <div class="article-copyright-write-text">Пишите</div>
+                    <a class="article-copyright-write-mail" href="">info@abusiness.com</a>
+                </div>
+            </div>
+            <div class="article-copyright-copyr">© 2016. Все права защищены.<br>Использование материалов сайта только с
+                разрешения администратора</div>
+        </article>
+    </footer>
+
+
+
+
+</body>
+
+</html>
